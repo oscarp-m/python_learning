@@ -1,22 +1,17 @@
 import random
 import string
- 
-number_of_loops = 0
 name_to_guess = input("Enter the name to guess: ").lower()
 guessed_name = ""
 name_is_guessed = False
-
 while name_is_guessed == False:
     for char in name_to_guess:
         char_is_correct = False
         while char_is_correct == False:
             guessed_char = random.choice(string.ascii_lowercase)
             print(f"{guessed_char}")
-
             if guessed_char == char:
                 guessed_name = guessed_name + guessed_char
                 print(f"{guessed_name}")
-                char_is_correct = True
-
+                char_is_correct = True          
         if guessed_name == name_to_guess:
             name_is_guessed = True
